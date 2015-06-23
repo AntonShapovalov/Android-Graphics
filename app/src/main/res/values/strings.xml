@@ -24,4 +24,6 @@
 
     <string name="imageview_activity_name">Image View</string>
     <string name="image_text_view_text">Text 1Text \n1Text</string>
+
+    <string name="cursor_loader_activity_name">Cursor Loader</string>
 </resources>
