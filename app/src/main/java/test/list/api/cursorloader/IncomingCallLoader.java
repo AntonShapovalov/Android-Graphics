@@ -1,6 +1,6 @@
 package test.list.api.cursorloader;
 
-import android.app.ListActivity;
+import android.app.FragmentManager;
 import android.app.LoaderManager;
 import android.content.Context;
 import android.content.CursorLoader;
@@ -11,11 +11,12 @@ import android.os.Bundle;
 import android.provider.CallLog;
 import android.widget.CursorAdapter;
 
+import test.list.api.R;
+
 public class IncomingCallLoader implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private Context context;
     private CursorAdapter adapter;
-    private String filter;
     public static final String[] CALLS_SUMMARY_PROJECTION = new String[]{
             CallLog.Calls._ID,
             CallLog.Calls.NUMBER,
@@ -27,18 +28,11 @@ public class IncomingCallLoader implements LoaderManager.LoaderCallbacks<Cursor>
     public IncomingCallLoader(Context context, CursorAdapter adapter) {
         this.context = context;
         this.adapter = adapter;
-
     }
 
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-        Uri baseUri;
-        if (filter != null) {
-            baseUri = Uri.withAppendedPath(CallLog.Calls.CONTENT_FILTER_URI,
-                    Uri.encode(filter));
-        } else {
-            baseUri = CallLog.Calls.CONTENT_URI;
-        }
+        Uri baseUri = CallLog.Calls.CONTENT_URI;
 
         String select = "(" + CallLog.Calls.TYPE + " = " + CallLog.Calls.INCOMING_TYPE + ")";
         return new CursorLoader(context, baseUri,
@@ -49,6 +43,15 @@ public class IncomingCallLoader implements LoaderManager.LoaderCallbacks<Cursor>
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         adapter.swapCursor(data);
+        FragmentManager fragmentManager = ((CursorLoaderActivity) context).getFragmentManager();
+        CursorLoaderListFragment listFragment = (CursorLoaderListFragment) fragmentManager.findFragmentById(R.id.activity_cursor_loader_list_fragment);
+        if (listFragment != null) {
+            if (listFragment.isResumed()) {
+                listFragment.setListShown(true);
+            } else {
+                listFragment.setListShownNoAnimation(true);
+            }
+        }
     }
 
     @Override
