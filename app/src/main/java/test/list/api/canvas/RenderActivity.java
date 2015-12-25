@@ -3,6 +3,8 @@ package test.list.api.canvas;
 import android.app.Activity;
 import android.os.Bundle;
 
+import ru.org.adons.clog.RecyclerAdapter;
+
 public class RenderActivity extends Activity {
 
 	@Override

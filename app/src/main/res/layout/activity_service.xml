@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ServiceActivity" >
+    tools:context=".ServiceActivity">
 
     <Button
         android:id="@+id/service_button_start"
@@ -18,5 +18,12 @@
         android:layout_height="wrap_content"
         android:onClick="stopMyService"
         android:text="@string/service_button_stop" />
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/shape_draw"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_image_white_48dp" />
 
 </LinearLayout>

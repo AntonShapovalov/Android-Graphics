@@ -11,9 +11,11 @@ import android.widget.ListView;
 public class MainActivity extends ListActivity {
 
     private final String packageName = "test.list.api.";
-    private final String[] packagePrefix = {"accelerometr.", "canvas.", "service.", "orientation.", "customview.", "imageview.", "cursorloader."};
+    private final String[] packagePrefix = {"accelerometr.", "canvas.", "service.", "orientation.",
+            "customview.", "imageview.", "cursorloader.", "animation."};
     private final String[] classNames = {"AccelerometrActivity", "RenderActivity", "ServiceActivity",
-            "OrientationActivity", "CustomViewActivity", "ImageviewActivity", "CursorLoaderActivity"};
+            "OrientationActivity", "CustomViewActivity", "ImageviewActivity", "CursorLoaderActivity",
+            "PropertyAnimation"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

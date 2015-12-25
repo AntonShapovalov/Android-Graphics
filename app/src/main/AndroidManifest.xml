@@ -2,10 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="test.list.api"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0">
 
     <uses-sdk
-        android:minSdkVersion="11"
+        android:minSdkVersion="15"
         android:targetSdkVersion="16" />
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -23,54 +23,60 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
+
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".accelerometr.AccelerometrActivity"
-            android:label="@string/accelerometr_activity_name" >
+            android:label="@string/accelerometr_activity_name">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+
         <activity
             android:name=".canvas.RenderActivity"
-            android:label="@string/render_activity_name" >
+            android:label="@string/render_activity_name">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+
         <activity
             android:name=".service.ServiceActivity"
-            android:label="@string/service_activity_name" >
+            android:label="@string/service_activity_name">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+
         <activity
             android:name=".orientation.OrientationActivity"
-            android:label="@string/orientation_activity_name" >
+            android:label="@string/orientation_activity_name">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+
         <activity
             android:name=".customview.CustomViewActivity"
-            android:label="@string/custom_view_activity_name" >
+            android:label="@string/custom_view_activity_name">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+
         <activity
             android:name=".imageview.ImageviewActivity"
-            android:label="@string/imageview_activity_name" >
+            android:label="@string/imageview_activity_name">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
@@ -80,11 +86,21 @@
 
         <activity
             android:name=".cursorloader.CursorLoaderActivity"
-            android:label="@string/cursor_loader_activity_name" >
+            android:label="@string/cursor_loader_activity_name">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+
+        <activity
+            android:name=".animation.PropertyAnimation"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
     </application>
 
 </manifest>
