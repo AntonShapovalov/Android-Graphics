@@ -1,1 +1,1 @@
-include ':app', ':clog-library-release'
+include ':app'

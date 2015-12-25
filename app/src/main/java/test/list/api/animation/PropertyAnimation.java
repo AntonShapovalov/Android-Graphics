@@ -30,6 +30,7 @@ public class PropertyAnimation extends Activity {
     private int clickSoundId = -1;
 
     @Override
+    @SuppressWarnings("deprecation")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animation);
@@ -63,8 +64,8 @@ public class PropertyAnimation extends Activity {
         animator.setRepeatCount(4);
         animator.setRepeatMode(ValueAnimator.REVERSE);
         animator.addListener(new AnimatorListener());
+        animator.setStartDelay(1000);
         animator.start();
-
     }
 
     @Override
@@ -93,24 +94,29 @@ public class PropertyAnimation extends Activity {
     }
 
     private final class AnimatorWorker implements Runnable {
+        private long timePoint = 0;
+
         @Override
         public void run() {
             while (isRepeat) {
-                try {
-                    Thread.sleep(5000); // 5 sec
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                // repeat each 5 seconds
+                if (System.currentTimeMillis() - timePoint > 5000) {
+                    timePoint = System.currentTimeMillis();
+                    if (!animator.isStarted() && !animator.isRunning() && isRepeat) {
+                        mainHandler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                animator.start();
+                            }
+                        });
+                    }
+                } else {
+                    try {
+                        Thread.sleep(50); // 0,05 sec
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
-
-                if (!animator.isStarted() && isRepeat) {
-                    mainHandler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            animator.start();
-                        }
-                    });
-                }
-
             }
         }
     }
