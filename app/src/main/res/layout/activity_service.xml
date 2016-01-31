@@ -26,4 +26,9 @@
         android:scaleType="fitCenter"
         android:src="@drawable/ic_image_white_48dp" />
 
+    <TextView
+        android:id="@+id/text_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
