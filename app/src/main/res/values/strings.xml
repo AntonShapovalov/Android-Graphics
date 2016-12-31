@@ -26,4 +26,8 @@
     <string name="image_text_view_text">Text 1Text \n1Text</string>
 
     <string name="cursor_loader_activity_name">Cursor Loader</string>
+
+    <string name="y_caption">Y=</string>
+    <string name="button_name">GO</string>
+    <string name="formula_validation_message">kx+b, где k,x - целые числа</string>
 </resources>

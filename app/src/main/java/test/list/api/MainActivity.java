@@ -10,26 +10,26 @@ import android.widget.ListView;
 
 public class MainActivity extends ListActivity {
 
-    private final String packageName = "test.list.api.";
     private final String[] packagePrefix = {"accelerometr.",
             "canvas.", "service.", "orientation.",
             "customview.", "imageview.", "cursorloader.",
-            "animation.", "sound."};
+            "animation.", "sound.", "plotbuilder."};
     private final String[] classNames = {"AccelerometrActivity",
             "RenderActivity", "ServiceActivity", "OrientationActivity",
             "CustomViewActivity", "ImageviewActivity", "CursorLoaderActivity",
-            "PropertyAnimation", "SoundActivity"};
+            "PropertyAnimation", "SoundActivity", "PlotActivity"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, classNames));
+        setListAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, classNames));
     }
 
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
         try {
+            String packageName = "test.list.api.";
             Class<?> clas = Class.forName(packageName + packagePrefix[position] + classNames[position]);
             Intent intent = new Intent(this, clas);
             startActivity(intent);

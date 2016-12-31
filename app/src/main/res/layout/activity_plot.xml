@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="test.list.api.plotbuilder.PlotActivity">
+
+    <TextView
+        android:id="@+id/text_y_caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/edit_text_formula"
+        android:padding="4dp"
+        android:text="@string/y_caption"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    <EditText
+        android:id="@id/edit_text_formula"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/button_go"
+        android:layout_toRightOf="@id/text_y_caption"
+        android:inputType="textCapCharacters"/>
+
+    <Button
+        android:id="@id/button_go"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:onClick="drawGraphic"
+        android:text="@string/button_name"/>
+
+    <test.list.api.plotbuilder.GraphicView
+        android:id="@+id/view_graphic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/edit_text_formula"
+        android:layout_margin="8dp"/>
+
+</RelativeLayout>
