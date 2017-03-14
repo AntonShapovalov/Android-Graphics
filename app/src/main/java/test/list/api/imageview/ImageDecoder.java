@@ -4,10 +4,10 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
-public class ImageDecoder {
+class ImageDecoder {
 
-    public static Bitmap decodeBitmapFromResource(Resources res, int resId,
-                                                  int reqWidth, int reqHeight) {
+    static Bitmap decodeBitmapFromResource(Resources res, int resId,
+                                           int reqWidth, int reqHeight) {
 
         // First decode with inJustDecodeBounds=true to check dimensions
         final BitmapFactory.Options options = new BitmapFactory.Options();
@@ -22,7 +22,7 @@ public class ImageDecoder {
         return BitmapFactory.decodeResource(res, resId, options);
     }
 
-    public static int calculateInSampleSize(
+    private static int calculateInSampleSize(
             BitmapFactory.Options options, int reqWidth, int reqHeight) {
         // Raw height and width of image
         final int height = options.outHeight;

@@ -10,14 +10,22 @@ import android.widget.ListView;
 
 public class MainActivity extends ListActivity {
 
-    private final String[] packagePrefix = {"accelerometr.",
-            "canvas.", "service.", "orientation.",
-            "customview.", "imageview.", "cursorloader.",
-            "animation.", "sound.", "plotbuilder."};
-    private final String[] classNames = {"AccelerometrActivity",
-            "RenderActivity", "ServiceActivity", "OrientationActivity",
-            "CustomViewActivity", "ImageviewActivity", "CursorLoaderActivity",
-            "PropertyAnimation", "SoundActivity", "PlotActivity"};
+    private final String[] packagePrefix = {
+            "accelerometr.",
+            "canvas.",
+            "orientation.",
+            "imageview.",
+            "animation.",
+            "plotbuilder."
+    };
+    private final String[] classNames = {
+            "AccelerometrActivity",
+            "RenderActivity",
+            "OrientationActivity",
+            "ImageviewActivity",
+            "PropertyAnimation",
+            "PlotActivity"
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

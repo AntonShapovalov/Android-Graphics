@@ -4,14 +4,14 @@ import android.graphics.Rect;
 
 public interface Bar {
 
-	public int getLegendX();
+    int getLegendX();
 
-	public int getLegendY();
+    int getLegendY();
 
-	public void incrCount();
+    void incrCount();
 
-	public void setRectangle();
+    void setRectangle();
 
-	public Rect getRectangle();
+    Rect getRectangle();
 
 }

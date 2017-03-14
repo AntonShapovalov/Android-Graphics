@@ -14,13 +14,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class DateTimeUtils {
+class DateTimeUtils {
 
     public static void run() {
         DateFormat dateFormat = DateFormat.getDateTimeInstance();
         DateTimeFormatter fmt = ISODateTimeFormat.dateTime();
 
-        /**
+        /*
          * DataTimeZone.UTC return the same millis as initial date !!!
          */
         MutableDateTime mCurrent = new MutableDateTime(1484557500000L);
@@ -65,7 +65,7 @@ public class DateTimeUtils {
 //        Log.d("*** DATE_TIME ***", String.valueOf(dtLondonSameTime.getMillis()));
 //        Log.d("*** DATE_TIME ***", fmt.print(dtLondonSameTime));
 
-        /**
+        /*
          * ------------------------ UTC conservations ----------------------------------------
          */
         DateTime currentDate;
@@ -74,7 +74,7 @@ public class DateTimeUtils {
         long utcMillis;
         DateTimeZone defaultZone = DateTimeZone.getDefault();
 
-        /**
+        /*
          * Convert current millis to UTC
          */
         currentDate = new DateTime();
@@ -90,7 +90,7 @@ public class DateTimeUtils {
         Log.d("*** DATE_TIME ***", "UTC.date = " + dateFormat.format(utcMillis));
         Log.d("*** DATE_TIME ***", "UTC.format = " + fmt.print(utcDate));
 
-        /**
+        /*
          * Convert some UTC millis to local
          */
 //        utcMillis = 1459325827594L;
@@ -107,7 +107,7 @@ public class DateTimeUtils {
 //        Log.d("*** DATE_TIME ***", "Current.format = " + fmt.print(currentDate));
 
 
-        /**
+        /*
          * Convert some text date value to UTC millis and local millis
          */
         String someTextDate = "2017-01-16T11:05:00.000Z";
@@ -239,12 +239,9 @@ public class DateTimeUtils {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        String[] arr = new String[0];
-        pln(String.valueOf(arr.length));
     }
 
-    public static void pln(String s) {
+    private static void pln(String s) {
         System.out.println(s);
     }
 }

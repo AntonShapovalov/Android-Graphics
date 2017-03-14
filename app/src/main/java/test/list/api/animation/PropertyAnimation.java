@@ -22,7 +22,7 @@ public class PropertyAnimation extends Activity {
 
     private ImageView farm;
     private ValueAnimator animator;
-    private Handler mainHandler = new Handler();
+    private final Handler mainHandler = new Handler();
     private Thread animatorThread;
     private volatile boolean isRepeat;
     private SoundPool soundPool;

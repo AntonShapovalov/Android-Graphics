@@ -4,10 +4,6 @@
           android:versionCode="1"
           android:versionName="1.0">
 
-    <uses-sdk
-        android:minSdkVersion="15"
-        android:targetSdkVersion="16"/>
-
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
@@ -51,24 +47,8 @@
         </activity>
 
         <activity
-            android:name=".service.ServiceActivity"
-            android:label="@string/service_activity_name">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
-        </activity>
-
-        <activity
             android:name=".orientation.OrientationActivity"
             android:label="@string/orientation_activity_name">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
-        </activity>
-
-        <activity
-            android:name=".customview.CustomViewActivity"
-            android:label="@string/custom_view_activity_name">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity"/>
@@ -82,28 +62,10 @@
                 android:value=".MainActivity"/>
         </activity>
 
-        <service android:name=".service.MyService"/>
-
-        <activity
-            android:name=".cursorloader.CursorLoaderActivity"
-            android:label="@string/cursor_loader_activity_name">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
-        </activity>
-
         <activity
             android:name=".animation.PropertyAnimation"
             android:label="@string/app_name"
             android:screenOrientation="landscape">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
-        </activity>
-
-        <activity
-            android:name=".sound.SoundActivity"
-            android:label="@string/app_name">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity"/>

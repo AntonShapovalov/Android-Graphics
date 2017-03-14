@@ -2,13 +2,10 @@ package test.list.api.imageview;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
-import java.io.InputStream;
 
 import test.list.api.R;
 
@@ -31,6 +28,7 @@ public class ImageViewHolder extends ViewGroup {
         //addView(imageView1);
     }
 
+    @SuppressWarnings("SuspiciousNameCombination")
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
