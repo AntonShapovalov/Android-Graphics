@@ -1,1 +1,1 @@
-How did I start with Android many years ago ... :)
+How I started with Android many years ago ... :)
